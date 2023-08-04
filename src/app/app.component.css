@@ -1,3 +1,9 @@
 .container {
   margin-top: 30px;
 }
+input.ng-touched.ng-invalid {
+  border: 1px solid rgb(166, 25, 25);
+}
+.help-block {
+  color: rgb(166, 25, 25);
+}
