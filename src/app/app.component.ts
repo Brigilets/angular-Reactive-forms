@@ -38,10 +38,30 @@ export class AppComponent implements OnInit {
       gender: new FormControl('female'),
       hobbies: new FormArray([]),
     });
+    // allows us to listen to changes
+
+    // this.signUpForm.valueChanges.subscribe((value) => console.log(value));
+    this.signUpForm.statusChanges.subscribe((status) => console.log(status));
+
+    // this.signUpForm.setValue({
+    //   userData: {
+    //     username: 'Brigi',
+    //     email: 'brigi@brigi.com',
+    //   },
+    //   gender: 'female',
+    //   hobbies: [],
+    // });
+
+    // this.signUpForm.patchValue({
+    //   userData: {
+    //     username: 'Brigilets',
+    //   },
+    // });
   }
 
   onSubmit(): void {
     console.log(this.signUpForm);
+    this.signUpForm.reset();
   }
   getControls() {
     return (<FormArray>this.signUpForm.get('hobbies'))?.controls;
